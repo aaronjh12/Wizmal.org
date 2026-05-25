@@ -1,15 +1,15 @@
-/* Reset some default styles */
+/* Reset default styles */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #0f0f2f;
-  color: #fff;
+  height: 100%;
   overflow-x: hidden;
+  background-color: #0f0f2f; /* fallback background */
 }
 
-/* Background with animated neon effect */
-.futuristic-background {
+/* Neon purple animated background */
+.background {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,79 +17,79 @@ body, html {
   height: 100%;
   background: linear-gradient(270deg, #a020f0, #ff00ff, #a020f0);
   background-size: 600% 600%;
-  animation: neonPulse 10s ease-in-out infinite;
+  animation: gradientShift 15s ease infinite;
   z-index: -1;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-@keyframes neonPulse {
+@keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Header styles */
+/* Header styles with glow effect */
 header {
   text-align: center;
-  padding: 50px 20px;
+  padding: 80px 20px;
   background: rgba(15, 15, 47, 0.6);
 }
 
 header h1 {
-  font-size: 3em;
-  color: #d400ff;
-  text-shadow: 0 0 10px #d400ff, 0 0 20px #d400ff;
-  margin-bottom: 10px;
-  animation: glow 2s infinite alternate;
+  font-size: 4em;
+  color: #d400ff; /* bright purple */
+  text-shadow: 0 0 20px #d400ff, 0 0 40px #a020f0;
+  margin-bottom: 20px;
+  animation: pulseGlow 2s infinite alternate;
 }
 
 header p {
   font-size: 1.2em;
-  color: #aaaaff;
+  color: #ccccff;
 }
 
 /* Content section styles */
 .content {
   text-align: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.5em;
   color: #d400ff;
   margin-bottom: 20px;
   animation: pulse 3s infinite;
 }
 
 p {
-  font-size: 1.1em;
-  color: #ccc;
+  font-size: 1.2em;
+  color: #aaaaff;
 }
 
-/* Button styles with animation */
-.fancy-btn {
+/* Button styles with glow and hover effect */
+.futuristic-btn {
+  padding: 15px 40px;
+  font-size: 1.2em;
+  color: white;
   background: linear-gradient(45deg, #d400ff, #ff00ff);
   border: none;
-  padding: 15px 30px;
-  margin-top: 30px;
-  font-size: 1.2em;
-  color: #fff;
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 0 20px #d400ff, inset 0 0 10px #ff00ff;
+  margin-top: 30px;
   transition: all 0.3s ease;
   animation: glowButton 2s infinite alternate;
 }
 
-.fancy-btn:hover {
+.futuristic-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 40px #ff00ff, inset 0 0 20px #d400ff;
 }
 
-/* Animations */
-@keyframes glow {
-  0% { text-shadow: 0 0 10px #d400ff, 0 0 20px #d400ff; }
-  100% { text-shadow: 0 0 20px #d400ff, 0 0 40px #d400ff; }
+/* Animations for glow effects */
+@keyframes pulseGlow {
+  0% { text-shadow: 0 0 10px #d400ff, 0 0 20px #a020f0; }
+  100% { text-shadow: 0 0 20px #d400ff, 0 0 40px #a020f0; }
 }
 
 @keyframes pulse {
